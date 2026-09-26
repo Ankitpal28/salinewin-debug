@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- title -->
+        <TextView
+            android:text="salinewin"
+            android:textColor="@color/green_bright"
+            android:textSize="24sp"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="screen overlay · color filter · crosshair"
+            android:textColor="@color/text_dim"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:layout_marginBottom="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- start / stop -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <Button
+                android:id="@+id/btnStart"
+                android:text="@string/btn_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"/>
+            <Button
+                android:id="@+id/btnStop"
+                android:text="@string/btn_stop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <!-- hotkey equivalents -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            <Button android:id="@+id/btnToggle"
+                android:text="@string/btn_toggle"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnHueDec"
+                android:text="@string/btn_hue_dec"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginHorizontal="2dp"/>
+            <Button android:id="@+id/btnHueInc"
+                android:text="@string/btn_hue_inc"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginHorizontal="2dp"/>
+            <Button android:id="@+id/btnReset"
+                android:text="@string/btn_reset"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <!-- hue -->
+        <TextView android:id="@+id/tvHue"
+            android:text="@string/lbl_hue"
+            android:textColor="@color/text_dim" android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/sbHue"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="360" android:progress="0"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- saturation -->
+        <TextView android:id="@+id/tvSat"
+            android:text="@string/lbl_sat"
+            android:textColor="@color/text_dim" android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/sbSat"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="400" android:progress="100"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- brightness -->
+        <TextView android:id="@+id/tvBri"
+            android:text="@string/lbl_bri"
+            android:textColor="@color/text_dim" android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/sbBri"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="400" android:progress="100"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- remote control launcher -->
+        <Button android:id="@+id/btnRemote"
+            android:text="@string/btn_remote"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:text="Gestures on overlay:\nTap = toggle  |  Swipe L/R = hue\nSwipe Up = brightness+  |  Swipe Down = reset"
+            android:textColor="@color/text_darker" android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>

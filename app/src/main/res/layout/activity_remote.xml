@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView android:text="salinewin remote"
+            android:textColor="@color/green_bright" android:textSize="20sp"
+            android:fontFamily="monospace" android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <TextView android:id="@+id/tvStatus"
+            android:text="○ DISCONNECTED"
+            android:textColor="@color/red" android:fontFamily="monospace"
+            android:textSize="13sp" android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <Button android:id="@+id/btnConnect"
+            android:text="@string/btn_connect"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView android:id="@+id/tvState"
+            android:text="—"
+            android:textColor="@color/text_dim" android:fontFamily="monospace"
+            android:textSize="11sp" android:layout_marginBottom="12dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+        <!-- hotkey buttons -->
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btnRemToggle" android:text="F5\nTOGGLE"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="2dp"/>
+            <Button android:id="@+id/btnRemHueDec" android:text="F7\nHUE-"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginHorizontal="2dp"/>
+            <Button android:id="@+id/btnRemHueInc" android:text="F6\nHUE+"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginHorizontal="2dp"/>
+            <Button android:id="@+id/btnRemReset" android:text="F8\nRESET"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="2dp"/>
+        </LinearLayout>
+
+        <Button android:id="@+id/btnRemStatus"
+            android:text="@string/btn_status"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView android:text="Hue (0–360°)"
+            android:textColor="@color/text_dim" android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/sbHueR"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="360" android:layout_marginBottom="8dp"/>
+
+        <TextView android:text="Saturation (0–400%)"
+            android:textColor="@color/text_dim" android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/sbSatR"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="400" android:progress="100" android:layout_marginBottom="8dp"/>
+
+        <TextView android:text="Brightness (0–400%)"
+            android:textColor="@color/text_dim" android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/sbBriR"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="400" android:progress="100" android:layout_marginBottom="16dp"/>
+
+        <TextView android:text="Setup:\n  adb forward tcp:9999 tcp:9999\n  then tap CONNECT"
+            android:textColor="@color/text_darker" android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>
