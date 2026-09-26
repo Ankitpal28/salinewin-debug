@@ -28,9 +28,9 @@ jobs:
 
       - name: Restore Gradle wrapper jar
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y gradle
-          gradle wrapper --gradle-version 8.4 --distribution-type bin
+          mkdir -p gradle/wrapper
+          curl -sSL -o gradle/wrapper/gradle-wrapper.jar \
+            https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradle/wrapper/gradle-wrapper.jar
 
       - name: Make gradlew executable
         run: chmod +x gradlew
